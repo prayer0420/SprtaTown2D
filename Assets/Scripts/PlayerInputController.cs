@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputController : MainController
 {
-    private Camera _camera;
+    public Camera _camera;
     private void Awake()
     {
         _camera = Camera.main;
@@ -13,7 +13,6 @@ public class PlayerInputController : MainController
 
     public void OnMove(InputValue inputValue)
     {
-        Debug.Log("asd");
         Vector2 moveInput = inputValue.Get<Vector2>().normalized;
         CallMoveEvent(moveInput);
 
@@ -21,11 +20,13 @@ public class PlayerInputController : MainController
 
     public void OnLook(InputValue inputValue)
     {
+        //마우스의 위치값
         Vector2 newAim = inputValue.Get<Vector2>();
+
         Vector2 worldPos = _camera.ScreenToWorldPoint(newAim);
         newAim = (worldPos - (Vector2)transform.position).normalized;
 
-        if(newAim.magnitude >= .9f)
+        if(newAim.magnitude >= 0.9f)
         {
             CallLookEvent(newAim);
         }

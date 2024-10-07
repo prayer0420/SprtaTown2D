@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 1421278669}
   - component: {fileID: 1421278671}
   - component: {fileID: 1421278670}
+  - component: {fileID: 1421278676}
   - component: {fileID: 1421278672}
   - component: {fileID: 1421278673}
   - component: {fileID: 1421278675}
@@ -524,6 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d28c467dc9bc244a87ddff53f41e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 519420031}
 --- !u!114 &1421278674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +550,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf938b44ee9271046af4d12d1b6717bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1421278676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421278668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14daf57b22e7fe940b19e58ecf0ea024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 598209342}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
