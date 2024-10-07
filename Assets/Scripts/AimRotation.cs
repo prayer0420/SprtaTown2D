@@ -31,7 +31,6 @@ public class AimRotation : MonoBehaviour
         //y,x 따른 라디안 각도를 구하고 라디안각도를 디그리로 바꿔줌
         float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         characterRenderer.flipX = Mathf.Abs(rotZ) > 90f; //
-        Debug.Log(Mathf.Abs(rotZ));
     }
 
 }
