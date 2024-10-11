@@ -21,7 +21,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Awake()
     {
-        statHandler = GetComponent<Creature>().statHandler;  // CreatureÀÇ StatSystem ÂüÁ¶
+       statHandler = GetComponent<Creature>().statHandler;  
     }
 
     private void Start()

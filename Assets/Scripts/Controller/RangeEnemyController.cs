@@ -8,9 +8,17 @@ public class RangeEnemyController : EnemyController
     [SerializeField][Range(0f, 100f)] private float followRange = 15f;
     [SerializeField][Range(0f, 100f)] private float shootRange = 10f;
 
+    public AttackSO attackSO { get; set; } 
+
+
     private int layerMaskTarget;
     private int layerMaskLevel;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        attackSO = GetComponent<AttackSO>();
+    }
     protected override void Start()
     {
         base.Start();

@@ -14,10 +14,14 @@ public class ContactEnemyController : EnemyController
 
     private HealthSystem collidingTargetHealthSystem;
     private Movement collidingMovement;
-    
+
+    public AttackSO attackSO { get; set; } 
+
+
     protected override void Start()
     {
         base.Start();
+        attackSO = GetComponent<AttackSO>();
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.OnDamage += OnDamage;
     }

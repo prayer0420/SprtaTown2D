@@ -7,7 +7,6 @@ public class Movement : MonoBehaviour
 {
     private MainController mainController;
 
-    [SerializeField]
     private Rigidbody2D rb;
 
     private Vector2 movementDirection = Vector2.zero;

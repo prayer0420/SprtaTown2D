@@ -21,8 +21,6 @@ public class EnemyController : MainController
     {
     }
 
-
-
     //°Å¸®
     protected float DistanceToTarget()
     {

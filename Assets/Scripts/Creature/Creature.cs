@@ -9,14 +9,14 @@ public abstract class Creature : MonoBehaviour
 
     // Animator Override Controller 추가
 
-    private void Awake()
+    protected virtual void Awake()
     {
         healthSystem = GetComponent<HealthSystem>();
         MainSpriteObj = this.transform.GetChild(0);
 
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         // 체력 시스템 초기화 및 이벤트 연결
         healthSystem.OnDeath += Die;

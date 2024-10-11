@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 933ff6c30a65c484990ca27255352185, type: 3}
-  m_Name: MonsterStatSO
+  m_Name: OrcShamanStatSO
   m_EditorClassIdentifier: 
-  baseHealth: 50
-  baseAttack: 5
-  baseDefense: 40
+  baseHealth: 70
+  baseAttack: 7
+  baseDefense: 7
   baseMana: 0
   baseSpeed: 3

@@ -84,7 +84,7 @@ public class WeaponSO : EquipmentItemSO
     }
 }
 
-public class TopDownShooting : MonoBehaviour
+public class Shooting : MonoBehaviour
 {
     [SerializeField] private Transform projectileSpawnPosition;
     private Vector2 aimDirection = Vector2.right;
