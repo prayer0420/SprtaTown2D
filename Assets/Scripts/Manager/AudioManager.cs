@@ -9,16 +9,8 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource bgmSource;
     public AudioSource sfxSource;
-    public AudioClip start;
-    public AudioClip main;
-    public AudioClip gallery;
-    public AudioClip matched;
-    public AudioClip unmatched;
-    public AudioClip time;
-    public AudioClip flip;
-    public AudioClip success;
-    public AudioClip fail;
-    public AudioClip click;
+    public AudioClip Title;
+    public AudioClip Game;
 
     public Scene currentScene;
     public AudioClip newClip = null;
@@ -37,7 +29,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    
 
     private void Start()
     {
@@ -50,23 +41,17 @@ public class AudioManager : MonoBehaviour
 
 
         // 씬 이름에 따른 처리
-        if (currentScene.name == "StartScene" || currentScene.name == "NameScene")
+        if (currentScene.name == "TitleScene")
         {
-            newClip = start;
+            newClip = Title;
             bgmSource.volume = 0.1f;
         }
-        else if (currentScene.name == "MainScene")
+        else if (currentScene.name == "GameScene")
         {
-            newClip = main;
-            bgmSource.clip = main;
+            newClip = Game;
+            bgmSource.clip = Game;
             bgmSource.volume = 0.1f;
             bgmSource.Play();
-        }
-        else if (currentScene.name == "GalleryScene_YJ" || currentScene.name == "GalleryScene_GD" || currentScene.name == "GalleryScene_TH" || currentScene.name == "GalleryScene_B")
-        {
-            newClip = gallery;
-            bgmSource.volume = 0.5f;
-
         }
 
         if (bgmSource.clip != newClip)

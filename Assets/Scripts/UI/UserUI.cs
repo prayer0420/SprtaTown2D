@@ -37,10 +37,10 @@ public class UserUI : MonoBehaviour
         }
         GameObject newUser = Instantiate(userNamePrefab, content.transform);
         TextMeshProUGUI userText = newUser.GetComponent<TextMeshProUGUI>();
-        userText.text = character.creatureName; // 또는 필요한 다른 속성
+        userText.text = character.creatureName;
 
         characterEntries.Add(character, newUser);
-        Debug.Log("유저 추가" + character.creatureName);
+        //Debug.Log("유저 추가" + character.creatureName);
         UIManager.Instance.UpdateAllUI();
     }
 

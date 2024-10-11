@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d8c365d7ff8d094887c0f9a82f6d275, type: 3}
   m_Name: KnightJobSO
   m_EditorClassIdentifier: 
-  characterJobName: Knigth
+  characterJobName: Knight
   characterImage: {fileID: 21300000, guid: 94b4a8b59d4ff3342bf614da72ca0d41, type: 3}
   baseStats: {fileID: 11400000, guid: cf008bfd8e6dd0f4d8159d92c62840fc, type: 2}
-  skills: []
   startingWeapon: {fileID: 11400000, guid: f840f7d57e626634cad151012a5df2b2, type: 2}
   attackSO: {fileID: 11400000, guid: ca7a5915368300b4eb897174b635889a, type: 2}
   animatorOverrideController: {fileID: 22100000, guid: 652141426d5d88e4c887b67066bbf1f7, type: 2}

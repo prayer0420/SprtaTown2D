@@ -100,14 +100,6 @@ public class QuestUIManager : MonoBehaviour
                 QuestUI questUI = questItemObj.GetComponent<QuestUI>();
                 questUI.SetQuestSO(quest);
                 questUI.questButton.interactable = true;
-                //if (QuestManager.Instance.HasQuest(quest))
-                //{
-                //    questUI.questButton.interactable = false;  // 이미 수락한 퀘스트는 비활성화
-                //}
-                //else
-                //{
-                //    questUI.questButton.interactable = true;  // 수락 가능한 퀘스트는 활성화
-                //}
             }
         }
     }
@@ -140,13 +132,13 @@ public class QuestUIManager : MonoBehaviour
     // 플레이어 퀘스트 패널에 퀘스트 정보를 설정
     private void SetQuestPanel(GameObject questItemObj, QuestSO quest)
     {
-        Text questNameText = questItemObj.transform.Find("QuestNameText").GetComponent<Text>();  // 퀘스트 이름 텍스트
-        Text questDescText = questItemObj.transform.Find("QuestDescText").GetComponent<Text>();  // 퀘스트 설명 텍스트
-        Text questProgressText = questItemObj.transform.Find("QuestProgressText").GetComponent<Text>();  // 퀘스트 진행 상황 텍스트
+        Text questNameText = questItemObj.transform.Find("QuestNameText").GetComponent<Text>();  
+        Text questDescText = questItemObj.transform.Find("QuestDescText").GetComponent<Text>();  
+        Text questProgressText = questItemObj.transform.Find("QuestProgressText").GetComponent<Text>();  
 
         questNameText.text = quest.questName;
         questDescText.text = quest.description;
-        questProgressText.text = $"{quest.objective.currentCount}/{quest.objective.targetCount}";  // 진행 상황 표시
+        questProgressText.text = $"{quest.objective.currentCount}/{quest.objective.targetCount}";  
     }
 
     // 진행 중인 퀘스트 토글이 켜졌을 때 ScrollView 활성화
@@ -277,10 +269,11 @@ public class QuestUIManager : MonoBehaviour
                 ShowActiveAndCompletedQuests();
             }
         }
-
+        //Test
         if (Input.GetKey(KeyCode.V))
         {
             currentQuest.objective.IsComplete = true;
+            currentQuest.objective.currentCount = currentQuest.objective.targetCount;
             Debug.Log($"{currentQuest} is complete!");
         }
     }
