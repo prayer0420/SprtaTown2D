@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public StatusUI statusUI;
     public QuestUIManager questUIManager; 
     public UserUI userUI;
+    private bool isUpdatingUserUI = false;
+
 
     private void Awake()
     {
@@ -36,7 +38,7 @@ public class UIManager : MonoBehaviour
         }
 
         // 초기 UI 업데이트
-        UpdateAllUI();
+        //UpdateAllUI();
     }
 
     // 모든 UI 업데이트 함수
@@ -76,9 +78,17 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUserUI()
     {
-        if (userUI != null)
+        if (isUpdatingUserUI)
         {
-            userUI.UpdateUserList();
+            return; // 이미 업데이트 중이면 중복 호출 방지
         }
+
+        isUpdatingUserUI = true;
+
+        // 실제 UI 업데이트 코드
+        userUI.UpdateUserList();
+
+        isUpdatingUserUI = false; // 작업이 끝나면 플래그 해제
+        Debug.Log("userList업데이트 끝");
     }
 }

@@ -19,6 +19,7 @@ public class Player : Creature
     public int Gold = 10000;
     private void Start()
     {
+
         GameManager.Instance.OnPlayerInfoChanged += ChangeInfo;
         GameManager.Instance.Player = this;
 
@@ -31,6 +32,9 @@ public class Player : Creature
         //캐릭터 이미지 가져오기
         MainSprite = characterJob.characterImage;
         MainSpriteObj.GetComponent<SpriteRenderer>().sprite = MainSprite;
+
+        //캐릭터매니저에 추가
+        CharacterManager.Instance.AddCharacter(this);
 
         // 스탯 초기화
         statHandler = new CharacterStatsHandler();
@@ -61,8 +65,7 @@ public class Player : Creature
         experienceSystem.onLevelUp += UIManager.Instance.UpdateStatusUI;
 
 
-        //캐릭터매니저에 추가
-        CharacterManager.Instance.AddCharacter(this);
+
     }
 
     //이름, 직업, 애니메이션 컨트롤러 갱신

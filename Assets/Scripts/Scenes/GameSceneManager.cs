@@ -11,7 +11,7 @@ public class GameSceneManager : SceneManager
     [SerializeField]
     public TextMeshProUGUI playerNameText;
 
-    private Text characterJobText;
+    private Text characterJobText {  get; set;}
 
     public GameObject ChangeInfo;
 
@@ -94,7 +94,6 @@ public class GameSceneManager : SceneManager
         // 씬이 파괴될 때 이벤트 구독 해제
         GameManager.Instance.OnPlayerInfoChanged -= UpdatePlayerInfo;
     }
-    
     
     //단축키 
     private void Update()

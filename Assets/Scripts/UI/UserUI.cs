@@ -11,12 +11,13 @@ public class UserUI : MonoBehaviour
 
     private void OnEnable()
     {
-        if (CharacterManager.Instance != null)
-        {
-            CharacterManager.Instance.OnCharacterAdded += OnCharacterAddedUI;
-        }
-
         // UI를 활성화할 때 리스트를 업데이트
+//        UpdateUserList();
+    }
+
+    private void Start()
+    {
+        CharacterManager.Instance.OnCharacterAdded += OnCharacterAddedUI;
         UpdateUserList();
     }
 
@@ -36,21 +37,11 @@ public class UserUI : MonoBehaviour
         }
         GameObject newUser = Instantiate(userNamePrefab, content.transform);
         TextMeshProUGUI userText = newUser.GetComponent<TextMeshProUGUI>();
-        userText.text = character.GetCreatureName(); // 또는 필요한 다른 속성
+        userText.text = character.creatureName; // 또는 필요한 다른 속성
 
         characterEntries.Add(character, newUser);
-        Debug.Log("유저 추가" + character.GetCreatureName());
+        Debug.Log("유저 추가" + character.creatureName);
         UIManager.Instance.UpdateAllUI();
-    }
-
-    // UI에서 캐릭터 항목 제거
-    private void RemoveCharacterEntry(Creature character)
-    {
-        if (characterEntries.TryGetValue(character, out GameObject entry))
-        {
-            Destroy(entry);
-            characterEntries.Remove(character);
-        }
     }
 
     // 전체 리스트를 갱신하거나 특정 조건에 따라 업데이트

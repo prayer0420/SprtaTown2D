@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public string GetCharacterJobName()
     {
-        return selectedJob != null ? selectedJob.name : "";
+        return selectedJob != null ? selectedJob.characterJobName : "";
     }
 
     public Sprite GetCharacterImg()
